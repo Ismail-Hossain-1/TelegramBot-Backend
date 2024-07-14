@@ -87,6 +87,14 @@ def index():
 @app.route("/setwebhook/")
 def setwebhook():
     s = requests.get("{telegram_url}/setWebhook?url={webhook_url}".format(telegram_url=TELEGRAM_URL,webhook_url=WEBHOOK_URL))
+    """
+    open s on browser to get:
+        {
+            "ok": true,
+            "result": true,
+            "description": "Webhook was set"
+        }
+    """
     print(s)
   
     if s:
